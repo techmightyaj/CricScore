@@ -35,6 +35,8 @@ public class TeamLogoAdapter extends RecyclerView.Adapter<TeamLogoAdapter.TeamVi
     public TeamViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_row_team_adapter, parent, false);
         TeamViewHolder viewHolder = new TeamViewHolder(v);
+
+
         return viewHolder;
 
     }
