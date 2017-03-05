@@ -1,10 +1,13 @@
 package com.techmighty.cricscore;
 
 import android.app.Application;
+import android.graphics.Bitmap;
 import android.text.TextUtils;
+import android.util.LruCache;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 
 /**
@@ -17,7 +20,7 @@ public class AppController extends Application {
             .getSimpleName();
 
     private RequestQueue mRequestQueue;
-
+    private ImageLoader mImageLoader;
     private static AppController mInstance;
 
     @Override
@@ -55,4 +58,27 @@ public class AppController extends Application {
         }
     }
 
+    public ImageLoader getImageLoader() {
+        getRequestQueue();
+
+        if (mImageLoader == null) {
+            mImageLoader = new ImageLoader(getRequestQueue(),
+                    new ImageLoader.ImageCache() {
+                        private final LruCache<String, Bitmap>
+                                cache = new LruCache<String, Bitmap>(20);
+
+                        @Override
+                        public Bitmap getBitmap(String url) {
+                            return cache.get(url);
+                        }
+
+                        @Override
+                        public void putBitmap(String url, Bitmap bitmap) {
+                            cache.put(url, bitmap);
+                        }
+                    });
+
+        }
+        return this.mImageLoader;
+    }
 }
