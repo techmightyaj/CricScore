@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_container_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    cardview:cardCornerRadius="@dimen/card_corner"
+    cardview:cardElevation="@dimen/card_elevation"
+    android:layout_margin="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_dark"
+            android:padding="@dimen/dimen_10">
+
+            <TextView
+                android:id="@+id/tv_series_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:text="ODI"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tv_series_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/tv_series_type"
+                android:text="Afghanistan vs Ireland ODI Series, 5 ODI Cricket Series in India, 2017"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_10">
+
+            <RelativeLayout
+                android:id="@+id/rl_logo_view"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dimen_15">
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/iv_team_1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="@dimen/dimen_5"
+                    android:layout_marginLeft="@dimen/dimen_10" />
+
+                <TextView
+                    android:id="@+id/tv_versus_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_team_1"
+                    android:layout_marginLeft="@dimen/dimen_10"
+                    android:layout_marginBottom="@dimen/dimen_5"
+                    android:text="Team1" />
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/iv_team_2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/tv_versus_name"
+                    android:layout_marginLeft="@dimen/dimen_10" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_toRightOf="@+id/rl_logo_view"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+
+                <TextView
+                    android:id="@+id/tv_start_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_10"
+                    android:text="Start Date : " />
+
+                <TextView
+                    android:id="@+id/tv_end_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_start_date"
+                    android:layout_marginBottom="@dimen/dimen_10"
+                    android:text="End Date : " />
+
+                <TextView
+                    android:id="@+id/tv_venue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_end_date"
+                    android:text="Venue: " />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

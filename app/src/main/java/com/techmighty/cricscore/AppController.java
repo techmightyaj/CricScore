@@ -9,6 +9,9 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.facebook.stetho.Stetho;
+import com.techmighty.cricscore.datamanager.database.DataBaseHelper;
+import com.techmighty.cricscore.datamanager.database.DatabaseManager;
 
 /**
  * Created by avaria on 05/03/17.
@@ -27,6 +30,8 @@ public class AppController extends Application {
     public void onCreate() {
         super.onCreate();
         mInstance = this;
+        Stetho.initializeWithDefaults(this);
+        DatabaseManager.initializeInstance(DataBaseHelper.getInstance(this));
     }
 
     public static synchronized AppController getInstance() {

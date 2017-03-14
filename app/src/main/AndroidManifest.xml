@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.techmighty.cricscore">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".AppController"
@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
+
+        </activity>
+        <activity
+            android:name=".activity.DashBoardActivity"
+            android:label="@string/title_activity_dash_board">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

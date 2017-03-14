@@ -47,9 +47,9 @@ public class TeamLogoAdapter extends RecyclerView.Adapter<TeamLogoAdapter.TeamVi
         if (imageLoader == null) {
             imageLoader = AppController.getInstance().getImageLoader();
         } else {
-            imageLoader.get(teamBean.getTeamFlagPath(), ImageLoader.getImageListener(holder.profileView, R.mipmap.ic_launcher,
+            imageLoader.get(teamBean.getTeamSmallRoundFlagPath(), ImageLoader.getImageListener(holder.profileView, R.mipmap.ic_launcher,
                     R.mipmap.ic_launcher));
-            holder.profileView.setImageUrl(teamBean.getTeamLogoPath(), imageLoader);
+            holder.profileView.setImageUrl(teamBean.getTeamSmallRoundFlagPath(), imageLoader);
 
         }
         holder.teamName.setText(teamBean.getShortName());

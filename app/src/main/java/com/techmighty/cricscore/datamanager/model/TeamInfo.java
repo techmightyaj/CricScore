@@ -34,8 +34,8 @@ public class TeamInfo {
         private String created;
         @JsonProperty("lang")
         private String lang;
-        @JsonProperty("diagnostics")
-        private DiagnosticsBean diagnostics;
+        /*  @JsonProperty("diagnostics")
+          private DiagnosticsBean diagnostics;*/
         @JsonProperty("results")
         private ResultsBean results;
 
@@ -63,13 +63,13 @@ public class TeamInfo {
             this.lang = lang;
         }
 
-        public DiagnosticsBean getDiagnostics() {
+        /*public DiagnosticsBean getDiagnostics() {
             return diagnostics;
         }
 
         public void setDiagnostics(DiagnosticsBean diagnostics) {
             this.diagnostics = diagnostics;
-        }
+        }*/
 
         public ResultsBean getResults() {
             return results;
@@ -79,7 +79,7 @@ public class TeamInfo {
             this.results = results;
         }
 
-        @JsonIgnoreProperties(ignoreUnknown = true)
+     /*   @JsonIgnoreProperties(ignoreUnknown = true)
         public static class DiagnosticsBean {
 
 
@@ -253,7 +253,7 @@ public class TeamInfo {
                     this.content = content;
                 }
             }
-        }
+        }*/
 
         @JsonIgnoreProperties(ignoreUnknown = true)
         public static class ResultsBean {
@@ -302,7 +302,17 @@ public class TeamInfo {
                 @JsonProperty("TeamLargeRoundFlagPath")
                 private String TeamLargeRoundFlagPath;
                 @JsonProperty("Captain")
-                private List<CaptainBean> Captain;
+                private Object Captain;
+
+                private String teamID;
+
+                public String getTeamID() {
+                    return teamID;
+                }
+
+                public void setTeamID(String teamID) {
+                    this.teamID = teamID;
+                }
 
                 public String getLastUpdated() {
                     return LastUpdated;
@@ -424,11 +434,11 @@ public class TeamInfo {
                     this.TeamLargeRoundFlagPath = TeamLargeRoundFlagPath;
                 }
 
-                public List<CaptainBean> getCaptain() {
+                public Object getCaptain() {
                     return Captain;
                 }
 
-                public void setCaptain(List<CaptainBean> Captain) {
+                public void setCaptain(Object Captain) {
                     this.Captain = Captain;
                 }
 
